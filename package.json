@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "workspaces": [
+    "./packages/*"
+  ],
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "@konfik-plugin/gitignore": "latest",
+    "@konfik-plugin/package-json": "latest",
+    "@konfik-plugin/prettier": "latest",
+    "prettier": "latest",
+    "konfik": "latest",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "typescript": "^4.5.5"
+  }
+}
