@@ -1,12 +1,14 @@
 import type { FileType } from '@konfik/core'
 import { GitignoreKonfik } from '@konfik-plugin/gitignore'
 import { PackageJsonKonfik } from '@konfik-plugin/package-json'
+import { TsconfigKonfik } from '@konfik-plugin/tsconfig'
 import type { BuiltInParserName } from 'prettier'
 import { format } from 'prettier'
 
 import * as base from '../packages/base/.konfik.js'
-import { eslintDeps, eslintKonfik } from '../packages/base/src/eslint.js'
+import { eslintDeps, eslintKonfik } from '../packages/base/src/eslint/base.js'
 import { prettierKonfik } from '../packages/base/src/prettier.js'
+import { tsconfigKonfik } from '../packages/base/src/tsconfig/base.js'
 
 const gitignoreKonfik = GitignoreKonfik([
   'node_modules',
@@ -37,10 +39,23 @@ const rootPkg = PackageJsonKonfik({
     '@konfik-plugin/gitignore': 'latest',
     '@konfik-plugin/package-json': 'latest',
     '@konfik-plugin/prettier': 'latest',
+    '@konfik-plugin/tsconfig': 'latest',
     prettier: 'latest',
     konfik: 'latest',
     ...eslintDeps,
   },
+  scripts: {
+    'lint:check': 'run lint:eslint:check && run lint:prettier:check',
+    'lint:fix': 'run lint:eslint:fix & run lint:prettier:fix',
+    'lint:eslint:fix': 'eslint packages --ext .ts --fix',
+    'lint:eslint:check': 'eslint packages --ext .ts --max-warnings=0',
+    'lint:prettier:fix': 'prettier packages --write',
+    'lint:prettier:check': 'prettier packages --check',
+  },
+})
+
+const tsconfig = TsconfigKonfik({
+  ...tsconfigKonfik,
 })
 
 export default {
@@ -48,6 +63,7 @@ export default {
   'package.json': rootPkg,
   '.eslintrc.json': eslintKonfik,
   'prettier.config.js': prettierKonfik,
+  'tsconfig.json': tsconfig,
   packages: {
     base: { 'package.json': base.konfikPkg },
   },
