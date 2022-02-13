@@ -9,11 +9,11 @@
     "./eslint/next": "./src/eslint/next.ts",
     "./tsconfig/base": "./src/tsconfig/base.ts"
   },
-  "types": "./src/index.ts",
   "dependencies": {
     "@konfik-plugin/eslint": "latest",
     "@konfik-plugin/prettier": "latest",
-    "@konfik-plugin/tsconfig": "latest"
+    "@konfik-plugin/tsconfig": "latest",
+    "prettier": "^2.5.1"
   },
   "publishConfig": {
     "access": "public"

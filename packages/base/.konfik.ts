@@ -15,6 +15,7 @@ export const konfikPkg = PackageJsonKonfik({
     '@konfik-plugin/eslint': 'latest',
     '@konfik-plugin/prettier': 'latest',
     '@konfik-plugin/tsconfig': 'latest',
+    prettier: '^2.5.1',
   },
   publishConfig: {
     access: 'public',

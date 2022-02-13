@@ -1,14 +1,13 @@
-import type { FileType } from '@konfik/core'
 import { GitignoreKonfik } from '@konfik-plugin/gitignore'
 import { PackageJsonKonfik } from '@konfik-plugin/package-json'
 import { TsconfigKonfik } from '@konfik-plugin/tsconfig'
-import type { BuiltInParserName } from 'prettier'
-import { format } from 'prettier'
 
 import * as base from '../packages/base/.konfik.js'
 import { eslintDeps, eslintKonfik } from '../packages/base/src/eslint/base.js'
 import { prettierKonfik } from '../packages/base/src/prettier.js'
 import { tsconfigKonfik } from '../packages/base/src/tsconfig/base.js'
+
+export { prettyPrint } from '../packages/base/src/index.js'
 
 const gitignoreKonfik = GitignoreKonfik([
   'node_modules',
@@ -45,6 +44,7 @@ const rootPkg = PackageJsonKonfik({
     ...eslintDeps,
   },
   scripts: {
+    'build:konfik': 'konfik build -c ./.konfik/index.ts',
     'lint:check': 'run lint:eslint:check && run lint:prettier:check',
     'lint:fix': 'run lint:eslint:fix & run lint:prettier:fix',
     'lint:eslint:fix': 'eslint packages --ext .ts --fix',
@@ -67,27 +67,4 @@ export default {
   packages: {
     base: { 'package.json': base.konfikPkg },
   },
-}
-
-export const prettyPrint = (uglyString: string, fileType: FileType): string => {
-  const parser = mapFileTypeToParser(fileType)
-  if (parser === undefined) return uglyString
-
-  return format(uglyString, { ...prettierKonfik, parser })
-}
-
-const mapFileTypeToParser = (fileType: FileType): BuiltInParserName | undefined => {
-  switch (fileType) {
-    case 'json-stringify':
-      return 'json-stringify'
-    case 'json':
-      return 'json'
-    case 'yaml':
-      return 'yaml'
-    case 'js':
-    case 'ts':
-      return 'babel-ts'
-    case 'plain':
-      return undefined
-  }
 }

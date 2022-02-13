@@ -22,6 +22,7 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
+    "build:konfik": "konfik build -c ./.konfik/index.ts",
     "lint:check": "run lint:eslint:check && run lint:prettier:check",
     "lint:fix": "run lint:eslint:fix & run lint:prettier:fix",
     "lint:eslint:fix": "eslint packages --ext .ts --fix",
