@@ -12,6 +12,14 @@ export const konfikPkg = PackageJsonKonfik({
     './tsconfig/base': './src/tsconfig/base.ts',
   },
   types: './src/index.ts',
+  typesVersions: {
+    '*': {
+      './eslint/base': ['./src/eslint/base.ts'],
+      './eslint/react': ['./src/eslint/react.ts'],
+      './eslint/next': ['./src/eslint/next.ts'],
+      './tsconfig/base': ['./src/tsconfig/base.ts'],
+    },
+  },
   dependencies: {
     '@konfik-plugin/eslint': 'latest',
     '@konfik-plugin/prettier': 'latest',
