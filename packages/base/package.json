@@ -12,16 +12,16 @@
   "types": "./src/index.ts",
   "typesVersions": {
     "*": {
-      "./eslint/base": [
+      "eslint/base": [
         "./src/eslint/base.ts"
       ],
-      "./eslint/react": [
+      "eslint/react": [
         "./src/eslint/react.ts"
       ],
-      "./eslint/next": [
+      "eslint/next": [
         "./src/eslint/next.ts"
       ],
-      "./tsconfig/base": [
+      "tsconfig/base": [
         "./src/tsconfig/base.ts"
       ]
     }

@@ -14,10 +14,10 @@ export const konfikPkg = PackageJsonKonfik({
   types: './src/index.ts',
   typesVersions: {
     '*': {
-      './eslint/base': ['./src/eslint/base.ts'],
-      './eslint/react': ['./src/eslint/react.ts'],
-      './eslint/next': ['./src/eslint/next.ts'],
-      './tsconfig/base': ['./src/tsconfig/base.ts'],
+      'eslint/base': ['./src/eslint/base.ts'],
+      'eslint/react': ['./src/eslint/react.ts'],
+      'eslint/next': ['./src/eslint/next.ts'],
+      'tsconfig/base': ['./src/tsconfig/base.ts'],
     },
   },
   dependencies: {
