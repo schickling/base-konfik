@@ -16,6 +16,7 @@
     "unicorn/no-array-for-each": "off",
     "unicorn/no-null": "off",
     "unicorn/prefer-spread": "off",
+    "unicorn/no-abusive-eslint-disable": "off",
     "func-style": ["warn", "expression"],
     "prefer-arrow-callback": "warn",
     "prefer-arrow/prefer-arrow-functions": [

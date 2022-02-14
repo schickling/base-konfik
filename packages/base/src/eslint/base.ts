@@ -32,6 +32,7 @@ export const eslintKonfik = EslintKonfik({
     'unicorn/no-array-for-each': 'off', // NOTE IMO `forEach` is still very useful in many cases
     'unicorn/no-null': 'off', // NOTE In theory I very much agree with this but e.g. `JSON.stringify` is still a common use case for me
     'unicorn/prefer-spread': 'off', // NOTE I haven't made up my mind on this yet
+    'unicorn/no-abusive-eslint-disable': 'off', // NOTE using `eslint-disable` is still useful sometimes (e.g. in generated files)
 
     // ----------------
     // Function-related
