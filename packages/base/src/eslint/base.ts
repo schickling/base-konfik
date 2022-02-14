@@ -31,6 +31,7 @@ export const eslintKonfik = EslintKonfik({
     'unicorn/no-array-reduce': 'off', // NOTE I agree that using `reduce` a lot can make things less readable but it's still very powerful
     'unicorn/no-array-for-each': 'off', // NOTE IMO `forEach` is still very useful in many cases
     'unicorn/no-null': 'off', // NOTE In theory I very much agree with this but e.g. `JSON.stringify` is still a common use case for me
+    'unicorn/prefer-spread': 'off', // NOTE I haven't made up my mind on this yet
 
     // ----------------
     // Function-related
@@ -40,6 +41,7 @@ export const eslintKonfik = EslintKonfik({
     // Pros:
     // + Easier to refactor (e.g. change from a constant to a function)
     // + Almost identical syntax to type-level function definitions
+    // + Allows for single line function definitions
     // + Helps avoid `this` binding issues for classes
     //
     // Cons:
