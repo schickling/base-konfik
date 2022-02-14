@@ -21,7 +21,10 @@ export const eslintKonfik = EslintKonfik({
     // ----------------
     // Unicorn --------
     // ----------------
-    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/prevent-abbreviations': 'off', // sometimes abbreviations are useful
+    'unicorn/filename-case': 'off', // TODO find a file-name/dir-name convention I'm happy with
+    'unicorn/prefer-optional-catch-binding': 'off',
+    'unicorn/no-array-callback-reference': 'off', // TODO find better alternative
 
     // ----------------
     // Function-related

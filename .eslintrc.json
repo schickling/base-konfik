@@ -6,6 +6,9 @@
   "extends": ["plugin:@typescript-eslint/recommended", "plugin:unicorn/recommended", "prettier"],
   "rules": {
     "unicorn/prevent-abbreviations": "off",
+    "unicorn/filename-case": "off",
+    "unicorn/prefer-optional-catch-binding": "off",
+    "unicorn/no-array-callback-reference": "off",
     "func-style": ["warn", "expression"],
     "prefer-arrow-callback": "warn",
     "prefer-arrow/prefer-arrow-functions": [
