@@ -17,6 +17,11 @@ export const eslintKonfik = EslintKonfik({
 
     'react/no-children-prop': 'off', // 🤷‍♂️ It seems to be more of a stylistic suggestion https://stackoverflow.com/a/42984758
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 })
 
 export const eslintDeps = {
