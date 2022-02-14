@@ -9,6 +9,9 @@
     "unicorn/filename-case": "off",
     "unicorn/prefer-optional-catch-binding": "off",
     "unicorn/no-array-callback-reference": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "unicorn/prefer-ternary": "off",
+    "unicorn/no-array-reduce": "off",
     "func-style": ["warn", "expression"],
     "prefer-arrow-callback": "warn",
     "prefer-arrow/prefer-arrow-functions": [

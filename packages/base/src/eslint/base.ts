@@ -25,6 +25,9 @@ export const eslintKonfik = EslintKonfik({
     'unicorn/filename-case': 'off', // TODO find a file-name/dir-name convention I'm happy with
     'unicorn/prefer-optional-catch-binding': 'off',
     'unicorn/no-array-callback-reference': 'off', // TODO find better alternative
+    'unicorn/consistent-function-scoping': 'off', // NOTE doesn't seem to work well with Effect (but seems useful nonetheless)
+    'unicorn/prefer-ternary': 'off', // NOTE IMO tenary statements aren't always more readable
+    'unicorn/no-array-reduce': 'off', // NOTE I agree that using `reduce` a lot can make things less readable but it's still very powerful
 
     // ----------------
     // Function-related
