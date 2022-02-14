@@ -28,9 +28,21 @@ export const eslintKonfik = EslintKonfik({
     'unicorn/consistent-function-scoping': 'off', // NOTE doesn't seem to work well with Effect (but seems useful nonetheless)
     'unicorn/prefer-ternary': 'off', // NOTE IMO tenary statements aren't always more readable
     'unicorn/no-array-reduce': 'off', // NOTE I agree that using `reduce` a lot can make things less readable but it's still very powerful
+    'unicorn/no-array-for-each': 'off', // NOTE IMO `forEach` is still very useful in many cases
 
     // ----------------
     // Function-related
+    //
+    // I generally prefer to use function expressions (aka arrow functions) over `function` definitions:
+    //
+    // Pros:
+    // + Easier to refactor (e.g. change from a constant to a function)
+    // + Almost identical syntax to type-level function definitions
+    // + Helps avoid `this` binding issues for classes
+    //
+    // Cons:
+    // - Doesn't work well for function overloads (which is uncommon in app code but more common in lib code)
+    // - Also doesn't seem to work for functions returning `never`
     // ----------------
     'func-style': ['warn', 'expression'], // only works for "top level" functions
     'prefer-arrow-callback': 'warn', // this is about function values provided as arguments

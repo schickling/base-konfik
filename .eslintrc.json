@@ -12,6 +12,7 @@
     "unicorn/consistent-function-scoping": "off",
     "unicorn/prefer-ternary": "off",
     "unicorn/no-array-reduce": "off",
+    "unicorn/no-array-for-each": "off",
     "func-style": ["warn", "expression"],
     "prefer-arrow-callback": "warn",
     "prefer-arrow/prefer-arrow-functions": [
