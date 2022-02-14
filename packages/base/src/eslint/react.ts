@@ -7,7 +7,11 @@ export const eslintKonfik = EslintKonfik({
   ignorePatterns: base.eslintKonfik.ignorePatterns,
   parser: base.eslintKonfik.parser,
   plugins: base.eslintKonfik.plugins,
-  extends: [...base.eslintKonfik.extends, 'plugin:react-hooks/recommended'],
+  extends: base.d([
+    ...base.eslintKonfik.extends,
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+  ] as const),
   rules: {
     ...base.eslintKonfik.rules,
 
@@ -18,4 +22,5 @@ export const eslintKonfik = EslintKonfik({
 export const eslintDeps = {
   ...base.eslintDeps,
   'eslint-plugin-react-hooks': '^4.3.0',
+  'eslint-plugin-react': '^7.28.0',
 } as const

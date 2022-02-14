@@ -1,13 +1,13 @@
 import { EslintKonfik } from '@konfik-plugin/eslint'
 
-const d = <T extends string>(_: readonly T[]): T[] => _ as T[]
+export const d = <T extends string>(_: readonly T[]): T[] => _ as T[]
 
 export const eslintKonfik = EslintKonfik({
   env: { es6: true },
 
-  ignorePatterns: ['!.konfik', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'],
+  ignorePatterns: d(['!.konfik', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'] as const),
 
-  parser: '@typescript-eslint/parser',
+  parser: '@typescript-eslint/parser' as const,
   plugins: d(['@typescript-eslint', 'simple-import-sort', 'import', 'prefer-arrow'] as const),
   extends: d([
     'plugin:@typescript-eslint/recommended',
