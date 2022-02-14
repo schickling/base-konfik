@@ -50,7 +50,6 @@ export const eslintKonfik = EslintKonfik({
     // - Doesn't work well for function overloads (which is uncommon in app code but more common in lib code)
     // - Also doesn't seem to work for functions returning `never`
     // ----------------
-    'func-style': ['warn', 'expression'], // only works for "top level" functions
     'prefer-arrow-callback': 'warn', // this is about function values provided as arguments
     'prefer-arrow/prefer-arrow-functions': [
       'warn',

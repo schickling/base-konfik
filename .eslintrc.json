@@ -18,7 +18,6 @@
     "unicorn/prefer-spread": "off",
     "unicorn/no-abusive-eslint-disable": "off",
     "unicorn/prefer-query-selector": "off",
-    "func-style": ["warn", "expression"],
     "prefer-arrow-callback": "warn",
     "prefer-arrow/prefer-arrow-functions": [
       "warn",
