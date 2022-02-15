@@ -8,7 +8,13 @@ export const eslintKonfik = EslintKonfik({
   ignorePatterns: d(['!.konfik', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'] as const),
 
   parser: '@typescript-eslint/parser' as const,
-  plugins: d(['@typescript-eslint', 'simple-import-sort', 'import', 'prefer-arrow'] as const),
+  plugins: d([
+    '@typescript-eslint',
+    'simple-import-sort',
+    // https://github.com/import-js/eslint-plugin-import
+    'import',
+    'prefer-arrow',
+  ] as const),
   extends: d([
     'plugin:@typescript-eslint/recommended',
     // https://github.com/sindresorhus/eslint-plugin-unicorn
@@ -83,6 +89,8 @@ export const eslintKonfik = EslintKonfik({
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off', // With inlay types this becomes less important
     '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
+    // TODO auto-fixing https://github.com/import-js/eslint-plugin-import/issues/2227 / https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md
+    'import/extensions': ['error', 'ignorePackages'],
   },
 })
 
