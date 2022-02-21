@@ -8,6 +8,7 @@ export const eslintKonfik = EslintKonfik({
   ignorePatterns: d(['!.konfik', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'] as const),
 
   parser: '@typescript-eslint/parser' as const,
+
   plugins: d([
     '@typescript-eslint',
     'simple-import-sort',
@@ -15,12 +16,17 @@ export const eslintKonfik = EslintKonfik({
     'import',
     'prefer-arrow',
   ] as const),
+
   extends: d([
     'plugin:@typescript-eslint/recommended',
     // https://github.com/sindresorhus/eslint-plugin-unicorn
     'plugin:unicorn/recommended',
     // Turns off all rules that are unnecessary or might conflict with Prettier.
     'prettier',
+    // NOTE This needs to be the last *last* extension (this applies prettier rules as eslint rules i.e. you don't need the Prettier VSC plugin anymore)
+    // See for more: https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
+    // NOTE this also means that the VSC "Format Document" command won't work
+    'plugin:prettier/recommended',
   ] as const),
 
   rules: {
@@ -99,6 +105,7 @@ export const eslintDeps = {
   '@typescript-eslint/parser': '^5.11.0',
   eslint: '^8.9.0',
   'eslint-config-prettier': '^8.3.0',
+  'eslint-plugin-prettier': '^4.0.0',
   'eslint-plugin-import': '^2.25.4',
   'eslint-plugin-simple-import-sort': '^7.0.0',
   'eslint-plugin-prefer-arrow': '^1.2.3',
