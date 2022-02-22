@@ -82,6 +82,8 @@ export const eslintKonfik = EslintKonfik({
     'import/no-named-as-default': 'warn',
     'import/no-named-as-default-member': 'warn',
     'import/no-duplicates': 'warn',
+    // TODO auto-fixing https://github.com/import-js/eslint-plugin-import/issues/2227 / https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md
+    'import/extensions': ['error', 'ignorePackages'],
 
     // ------------------
     // TypeScript-related
@@ -95,8 +97,6 @@ export const eslintKonfik = EslintKonfik({
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off', // With inlay types this becomes less important
     '@typescript-eslint/no-unused-vars': ['warn', { varsIgnorePattern: '^_', argsIgnorePattern: '^_' }],
-    // TODO auto-fixing https://github.com/import-js/eslint-plugin-import/issues/2227 / https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/file-extension-in-import.md
-    'import/extensions': ['error', 'ignorePackages'],
   },
 })
 
