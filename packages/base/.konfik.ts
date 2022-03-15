@@ -1,5 +1,7 @@
 import { PackageJsonKonfik } from '@konfik-plugin/package-json'
 
+import { konfikVersion } from '../../.konfik/common.js'
+
 export const konfikPkg = PackageJsonKonfik({
   name: '@schickling/base-konfik',
   type: 'module',
@@ -21,9 +23,9 @@ export const konfikPkg = PackageJsonKonfik({
     },
   },
   dependencies: {
-    '@konfik-plugin/eslint': 'latest',
-    '@konfik-plugin/prettier': 'latest',
-    '@konfik-plugin/tsconfig': 'latest',
+    '@konfik-plugin/eslint': konfikVersion,
+    '@konfik-plugin/prettier': konfikVersion,
+    '@konfik-plugin/tsconfig': konfikVersion,
     prettier: '^2.5.1',
   },
   publishConfig: {

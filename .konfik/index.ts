@@ -6,6 +6,8 @@ import * as base from '../packages/base/.konfik.js'
 import { eslintDeps, eslintKonfik } from '../packages/base/src/eslint/base.js'
 import { prettierKonfik } from '../packages/base/src/prettier.js'
 import { tsconfigKonfik } from '../packages/base/src/tsconfig/base.js'
+import { konfikVersion } from './common.js'
+import * as githubWorkflows from './github_workflows.js'
 
 export { prettyPrint } from '../packages/base/src/index.js'
 
@@ -35,23 +37,20 @@ const rootPkg = PackageJsonKonfik({
   workspaces: ['./packages/*'],
   packageManager: 'yarn@3.1.1',
   devDependencies: {
-    '@konfik-plugin/gitignore': 'latest',
-    '@konfik-plugin/package-json': 'latest',
-    '@konfik-plugin/prettier': 'latest',
-    '@konfik-plugin/tsconfig': 'latest',
+    '@konfik-plugin/gitignore': konfikVersion,
+    '@konfik-plugin/package-json': konfikVersion,
+    '@konfik-plugin/prettier': konfikVersion,
+    '@konfik-plugin/tsconfig': konfikVersion,
+    '@konfik-plugin/github': konfikVersion,
     // needed for pretty printing of konfik files
     prettier: 'latest',
-    konfik: 'latest',
+    konfik: konfikVersion,
     ...eslintDeps,
   },
   scripts: {
     'build:konfik': 'konfik build -c ./.konfik/index.ts',
-    'lint:check': 'run lint:eslint:check && run lint:prettier:check',
-    'lint:fix': 'run lint:eslint:fix & run lint:prettier:fix',
-    'lint:eslint:fix': 'eslint packages --ext .ts --fix',
-    'lint:eslint:check': 'eslint packages --ext .ts --max-warnings=0',
-    'lint:prettier:fix': 'prettier packages --write',
-    'lint:prettier:check': 'prettier packages --check',
+    'lint:check': 'eslint packages .konfik --ext .ts,.tsx --max-warnings=0',
+    'lint:fix': 'eslint packages .konfik --ext .ts,.tsx --fix',
   },
 })
 
@@ -60,6 +59,11 @@ const tsconfig = TsconfigKonfik({
 })
 
 export default {
+  '.github': {
+    workflows: {
+      'main.yml': githubWorkflows.main,
+    },
+  },
   '.gitignore': gitignoreKonfik,
   'package.json': rootPkg,
   '.eslintrc.json': eslintKonfik,

@@ -1,8 +1,8 @@
 {
   "env": { "es6": true },
-  "ignorePatterns": ["!.konfik", "**/dist/*", "**/.nyc_output/*", "node_modules/*"],
+  "ignorePatterns": ["!**/.konfik*", "**/dist/*", "**/.nyc_output/*", "node_modules/*"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "simple-import-sort", "import", "prefer-arrow"],
+  "plugins": ["@typescript-eslint", "only-warn", "simple-import-sort", "import", "prefer-arrow"],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:unicorn/recommended",
@@ -35,6 +35,7 @@
     "import/no-named-as-default": "warn",
     "import/no-named-as-default-member": "warn",
     "import/no-duplicates": "warn",
+    "import/extensions": ["error", "ignorePackages"],
     "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/ban-types": "off",
@@ -43,7 +44,6 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }],
-    "import/extensions": ["error", "ignorePackages"]
+    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }]
   }
 }

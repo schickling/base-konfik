@@ -5,12 +5,14 @@ export const d = <T extends string>(_: readonly T[]): T[] => _ as T[]
 export const eslintKonfik = EslintKonfik({
   env: { es6: true },
 
-  ignorePatterns: d(['!.konfik', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'] as const),
+  ignorePatterns: d(['!**/.konfik*', '**/dist/*', '**/.nyc_output/*', 'node_modules/*'] as const),
 
   parser: '@typescript-eslint/parser' as const,
 
   plugins: d([
     '@typescript-eslint',
+    // https://github.com/bfanger/eslint-plugin-only-warn - recommended by @jasonkuhrt
+    'only-warn',
     'simple-import-sort',
     // https://github.com/import-js/eslint-plugin-import
     'import',
@@ -101,15 +103,16 @@ export const eslintKonfik = EslintKonfik({
 })
 
 export const eslintDeps = {
-  '@typescript-eslint/eslint-plugin': '^5.11.0',
-  '@typescript-eslint/parser': '^5.11.0',
-  eslint: '^8.9.0',
-  'eslint-config-prettier': '^8.3.0',
+  '@typescript-eslint/eslint-plugin': '^5.15.0',
+  '@typescript-eslint/parser': '^5.15.0',
+  eslint: '^8.11.0',
+  'eslint-plugin-only-warn': '^1.0.3',
+  'eslint-config-prettier': '^8.5.0',
   'eslint-plugin-prettier': '^4.0.0',
   'eslint-plugin-import': '^2.25.4',
   'eslint-plugin-simple-import-sort': '^7.0.0',
   'eslint-plugin-prefer-arrow': '^1.2.3',
-  'eslint-plugin-unicorn': '^40.1.0',
+  'eslint-plugin-unicorn': '^41.0.0',
   prettier: '^2.5.1',
-  typescript: '^4.5.5',
+  typescript: '^4.6.2',
 } as const
