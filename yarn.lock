@@ -169,9 +169,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schickling/konfik-base@workspace:packages/base":
+"@schickling/base-konfik@workspace:packages/base":
   version: 0.0.0-use.local
-  resolution: "@schickling/konfik-base@workspace:packages/base"
+  resolution: "@schickling/base-konfik@workspace:packages/base"
   dependencies:
     "@konfik-plugin/eslint": latest
     "@konfik-plugin/prettier": latest

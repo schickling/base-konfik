@@ -1,7 +1,7 @@
 import { PackageJsonKonfik } from '@konfik-plugin/package-json'
 
 export const konfikPkg = PackageJsonKonfik({
-  name: '@schickling/konfik-base',
+  name: '@schickling/base-konfik',
   type: 'module',
   version: '0.0.0',
   exports: {

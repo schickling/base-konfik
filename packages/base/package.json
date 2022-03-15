@@ -1,5 +1,5 @@
 {
-  "name": "@schickling/konfik-base",
+  "name": "@schickling/base-konfik",
   "type": "module",
   "version": "0.0.0",
   "exports": {
@@ -12,18 +12,10 @@
   "types": "./src/index.ts",
   "typesVersions": {
     "*": {
-      "eslint/base": [
-        "./src/eslint/base.ts"
-      ],
-      "eslint/react": [
-        "./src/eslint/react.ts"
-      ],
-      "eslint/next": [
-        "./src/eslint/next.ts"
-      ],
-      "tsconfig/base": [
-        "./src/tsconfig/base.ts"
-      ]
+      "eslint/base": ["./src/eslint/base.ts"],
+      "eslint/react": ["./src/eslint/react.ts"],
+      "eslint/next": ["./src/eslint/next.ts"],
+      "tsconfig/base": ["./src/tsconfig/base.ts"]
     }
   },
   "dependencies": {
