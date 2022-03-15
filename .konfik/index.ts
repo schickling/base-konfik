@@ -39,6 +39,7 @@ const rootPkg = PackageJsonKonfik({
     '@konfik-plugin/package-json': 'latest',
     '@konfik-plugin/prettier': 'latest',
     '@konfik-plugin/tsconfig': 'latest',
+    // needed for pretty printing of konfik files
     prettier: 'latest',
     konfik: 'latest',
     ...eslintDeps,

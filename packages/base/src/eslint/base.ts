@@ -110,5 +110,6 @@ export const eslintDeps = {
   'eslint-plugin-simple-import-sort': '^7.0.0',
   'eslint-plugin-prefer-arrow': '^1.2.3',
   'eslint-plugin-unicorn': '^40.1.0',
+  prettier: '^2.5.1',
   typescript: '^4.5.5',
 } as const
