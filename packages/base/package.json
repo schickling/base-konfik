@@ -31,7 +31,7 @@
     "@konfik-plugin/eslint": "0.0.19",
     "@konfik-plugin/prettier": "0.0.19",
     "@konfik-plugin/tsconfig": "0.0.19",
-    "prettier": "^2.5.1"
+    "prettier": "^2.6.0"
   },
   "publishConfig": {
     "access": "public"

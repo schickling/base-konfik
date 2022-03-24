@@ -48,6 +48,7 @@ export const eslintKonfik = EslintKonfik({
     'unicorn/prefer-spread': 'off', // NOTE I haven't made up my mind on this yet
     'unicorn/no-abusive-eslint-disable': 'off', // NOTE using `eslint-disable` is still useful sometimes (e.g. in generated files)
     'unicorn/prefer-query-selector': 'off',
+    'unicorn/relative-url-style': ['warn', 'always'],
 
     // ----------------
     // Function-related
@@ -103,8 +104,8 @@ export const eslintKonfik = EslintKonfik({
 })
 
 export const eslintDeps = {
-  '@typescript-eslint/eslint-plugin': '^5.15.0',
-  '@typescript-eslint/parser': '^5.15.0',
+  '@typescript-eslint/eslint-plugin': '^5.16.0',
+  '@typescript-eslint/parser': '^5.16.0',
   eslint: '^8.11.0',
   'eslint-plugin-only-warn': '^1.0.3',
   'eslint-config-prettier': '^8.5.0',
@@ -112,7 +113,7 @@ export const eslintDeps = {
   'eslint-plugin-import': '^2.25.4',
   'eslint-plugin-simple-import-sort': '^7.0.0',
   'eslint-plugin-prefer-arrow': '^1.2.3',
-  'eslint-plugin-unicorn': '^41.0.0',
-  prettier: '^2.5.1',
+  'eslint-plugin-unicorn': '^41.0.1',
+  prettier: '^2.6.0',
   typescript: '^4.6.2',
 } as const
